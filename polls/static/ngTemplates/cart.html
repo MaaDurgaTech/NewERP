@@ -1,0 +1,37 @@
+<div class="container-fluid row-1">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <div class="row" style=" margin-bottom:60px">
+        <div class="col-md-12 amnt-div text-center">
+          <p style="font-size: 24px;font-weight:600">Cart Items </p>
+        </div>
+      </div>
+      <div class="row" ng-repeat="a in cartProducts" style="margin-bottom:15px">
+        <div class="col-md-2 col-sm-2 col-xs-2">
+          <div class="prod-row-1" style="background-image: url({{a.image}});height:15vh!important">
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5">
+          <p class="t-4"> {{a.name}} </p>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <p class="t-4"> ₹ {{a.price}} </p>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+          <span class="glyphicon glyphicon-trash t-4" ng-click="removeCart($index)"></span>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-md-offset-6 col-md-2 col-xs-offset-6 col-xs-4  col-sm-offset-6 col-sm-3 amnt-div text-center">
+          <p class="t-4">Total :  ₹ {{cart_total}} </p>
+        </div>
+        <!-- <div class="col-md-2 amnt-div text-center" style="background:rgb(213, 213, 213);margin-left:20px" ng-click="">
+            <p class="t-4">Checkout </p>
+        </div> -->
+      </div>
+        <div class="row" >
+
+          </div>
+    </div>
+  </div>
+</div>

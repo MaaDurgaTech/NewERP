@@ -1,0 +1,155 @@
+<style media="screen">
+  .card{
+    height:180px;
+    /* background: linear-gradient(to bottom, #33ccff 0%, #003366 100%); */
+    border-radius:0px 30px 0px 30px;
+    border:1px solid #BEBEBE;
+    cursor:pointer;
+    box-shadow: 6px 4px 6px 4px gray;
+
+    color:white;
+    /* margin-top:-100%; */
+  }
+  /* #c1 :hover{
+    /* background: linear-gradient(to bottom, #33ccff 0%, #003366 100%); */
+    color:white;
+    height:200px;
+    width:105%;
+
+  } */
+  .container{
+    background:#003366;
+    height:150px;
+    width:100%;
+  }
+
+</style>
+<div class="container-fluid abc" style="">
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+    <!-- <div class="col-md-12"> -->
+<div class="row">
+  <a href="enquiry/feeReceiptPDF/">aaaaa</a>
+  </div>
+        <div class="row" >
+          <div class="col-md-3" ng-click="receptions()" id=c1 >
+            <div class="card text-center"  style="background: linear-gradient(to top right, #ccffff -2%, #043927 37%)">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <img src="https://img.icons8.com/color/48/000000/front-desk.png"style="padding-top:5%;"/>
+              <div class="card-body">
+                <h3 class="card-title" >Receptions Desk</h3>
+                <p class="card-text">
+                  <ul ng-repeat="i in enqdata  | orderBy: name : true | limitTo: 1" style="list-style:none;">
+                    <li>{{$index+1}}</li>
+                    </ul>
+
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"ng-click="student()">
+            <div class="card text-center" style="background:#8D021F;" >
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <img src="https://img.icons8.com/color/48/000000/student-male--v1.png"style="padding-top:5%;"/>
+              <div class="card-body">
+                <h3 class="card-title" > Student Management</h3>
+                <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3"ng-click="staff()">
+            <div class="card text-center"  style="background:#1a2228;">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <img src="https://img.icons8.com/color/48/000000/commercial-development-management.png" style="padding-top:5%;"/>
+              <div class="card-body">
+                <h3 class="card-title" ng-click="receptions()">Staff Management</h3>
+                <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3"ng-click="income()">
+            <div class="card text-center"style="background:#410056" >
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <img src="https://img.icons8.com/color/48/000000/laptop.png"style="padding-top:5%;"/>
+              <div class="card-body">
+                <h3 class="card-title" ng-click="receptions()">Account</h3>
+                <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+</div>
+
+<div class="row" style="margin-top:4%;">
+  <div class="col-md-3"id=c1 ng-click="receptions()">
+    <div class="card text-center"style="background:#66023C" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/class.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" ng-click="receptions()">Examination</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"ng-click="receptions()">
+    <div class="card text-center"style="background:#323715" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/last-48-hours.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" ng-click="receptions()">Time Table</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="receptions()">
+    <div class="card text-center" style="background:#964000" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/test-partial-passed.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" ng-click="receptions()">T C</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="receptions()">
+    <div class="card text-center"style="background:#0b0704" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/report-card.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" ng-click="receptions()">Attendance</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- <hr style="border: 1px solid black;" > -->

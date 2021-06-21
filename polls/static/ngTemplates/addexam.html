@@ -1,0 +1,121 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <img ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+    <span ><u style="font-size:24px;padding-left:35%;"><b> Create New Subject</u></b></span><br><br><br>
+      </div>
+
+
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+    <div class="form-group">
+      <label >Class:</label>
+      <select class="form-control"ng-model="form.addclass" ng-options="item.c_name for item in classData ">
+        <option value="" selected>Select Class</option>
+        </select>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+      <div class="form-group">
+        <label >Exam Term:</label>
+        <select class="form-control"ng-model="form.examterm" ng-options="item.term_name for item in ExamTermData  ">
+          <option value="" selected>Select Exam Term </option>
+          </select>
+      </div>
+      </div>
+      </div>
+      <ul ng-repeat="k in ExamTermData">
+        <li>{{k.subject1}}</li>
+        </ul>
+    <!-- <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+      <div class="form-group">
+        <label >Subject 1:</label>
+        <input type="text" class="form-control" ng-bind="form.subject1" placeholder="name" ng-options="item.subject1 for item in classData ">
+      </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+          <label >Subject 2:</label>
+          <input type="text" class="form-control" ng-model="form.subject2" placeholder="name" >
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6">
+          <div class="form-group">
+            <label >Subject 3:</label>
+            <input type="text" class="form-control" ng-model="form.subject3" placeholder="name" >
+          </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+            <div class="form-group">
+              <label >Subject 4:</label>
+              <input type="text" class="form-control" ng-model="form.subject4" placeholder="name" >
+            </div>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-offset-3 col-md-6">
+              <div class="form-group">
+                <label >Subject 5:</label>
+                <input type="text" class="form-control" ng-model="form.subject5" placeholder="name" >
+              </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                <div class="form-group">
+                  <label >Subject 6:</label>
+                  <input type="text" class="form-control" ng-model="form.subject6" placeholder="name" >
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                  <div class="form-group">
+                    <label >Subject 7:</label>
+                    <input type="text" class="form-control" ng-model="form.subject7" placeholder="name" >
+                  </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                    <div class="form-group">
+                      <label >Subject 8:</label>
+                      <input type="text" class="form-control" ng-model="form.subject8" placeholder="name" >
+                    </div>
+                    </div>
+                    </div>
+
+ -->
+
+
+
+
+
+
+  <div class="row text-center">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="saveexam()">SAVE</button>
+  </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,333 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html ng-app="routingEcommerce" ng-controller="main" id="main" style="scrollbar-width:none;">
+  <head >
+    <meta charset="utf-8">
+      <title>New</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+      <link rel="stylesheet" href="{% static 'css/main.css' %}" charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <!-- <link type="text/css" rel="stylesheet" href="dist/angular-flash.min.css" /> -->
+
+    <meta name="viewport" content="initial-scale=1">
+  </head>
+  <style>
+  body{
+    background: #E5E5E5;
+  }
+  .dropbtn {
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  /* position: relative; */
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #003366;
+}
+
+h5{
+  color:#003366;
+  font-weight: bold;
+}
+#im{
+  /* margin-left: 25px; */
+  width: 35px;
+  height: :35px;
+}
+#sett{
+  margin-right: 10px;
+  width: 16px;
+  height: :16px;
+  /* padding: 5px; */
+}
+b{
+  color: #003366;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+a{
+  cursor: pointer;
+}
+  </style>
+  <body >
+    <div class="row header" ng-controller="main" style="z-index:3;background:#003366" >
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="col-md-2">
+        <img src="https://img.icons8.com/wired/64/000000/school.png"/>
+
+      </div>
+    <h3  style="color:white;font-family: 'Goblin One';">N S PUBLIC SCHOOL</h3>
+    <!-- <h3  style="cursor:pointer">SURYA AVASHIYE VIDYALAYA </h3> -->
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="text-right" style="cursor:pointer;color:white">
+        <table>
+          <thead>
+            <tr>
+              <th style="padding-left:100px;padding-right:100px;padding-top:20px;"><a style="cursor:pointer;color:white" ng-click="goToMain()">Home</a></th>
+              <!-- <th style="padding-right:100px;padding-top:20px;"> <a style="cursor:pointer;color:white"><select style="background:#003366;border:none;">aaaaa
+                <option  style="color:red;">Enquiry</option>
+                <option ng-click="viewEnq()" >View Enquiry</option>
+                <option>Add Enquiry</option>
+              </select>
+                </a></th> -->
+                <th style="padding-right:100px;padding-top:20px;">
+<div class="dropdown">
+  <button class="dropbtn" >Enquiry</button>
+  <div class="dropdown-content">
+  <a ng-click="receptions()"><img src="https://img.icons8.com/metro/50/000000/user-male.png"style="height:14px;width:14px;"/>&nbsp;&nbsp;View Enquiry</a>
+  <a ng-click="addEnqForm()"><img src="https://img.icons8.com/metro/50/000000/user-male.png"style="height:14px;width:14px;"/>&nbsp;&nbsp;Add Enquiry</a>
+  </div>
+</div></th>
+              <th style="padding-right:100px;padding-top:20px;"><a style="cursor:pointer;color:white" ng-click="settingPage()">Setting</a></th>
+              <th style="padding-right:100px;padding-top:20px;"><a href="/login/"style="cursor:pointer;color:white">LogOut</a></th>
+            </tr>
+          </thead>
+        </table>
+        <!-- <img src="../static/images/cart.png " style="width: 35px;padding-top:5px" alt=""> -->
+        <!-- <span style="color:green;font-size:22px"> {{carttotalProducts}} </span> -->
+      </div>
+    </div>
+</div>
+<div class="container-fluid row-2" >
+<div class="row">
+  <div class="col-md-2 ">
+  </div>
+  <div class="col-md-10" style="background:#F0F0F0	;height:30px;margin-top:-39px;box-shadow:3px 3px 3px 3px gray;margin-bottom: -60px;">
+    <table>
+      <thead>
+        <tr style="cursor:pointer">
+          <th style="padding-left:30px;padding-top:3px;"><img ng-click="goToMain()" src="https://img.icons8.com/metro/26/fa314a/home.png"style="height:18px;width:18px;"/></th>
+          <th style="padding-left:5px;padding-right:30px;padding-top:10px;"><a style="cursor:pointer;color:red" ng-click="goToMain()">Home</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"> <a style="cursor:pointer;color:red">/</a ></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Student: 1010</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Staff: 100</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Bus: 100</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Hostel: 100</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Enquiry:{{len}}</a></th>
+          <th style="padding-right:30px;padding-top:10px;font-size:12px;"><a style="cursor:pointer;color:red">Sesion:2021-22 (Nishikant kumar)</a></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+</div>
+<!-- <div class="container-fluid row-3"> -->
+<div class="row text-center" >
+  <div class="col-md-2 " style="background: #E5E5E5;margin-top:-41px;box-shadow:3px 0px 8px 3px gray;">
+    <div class="form-group " style="margin-top:2%;">
+
+      <input type="text" class="form-control"  ng-model="form.search" ng-enter="enqdata()" placeholder="Search with ID No." style="border-radius:10px;margin-left:13px;" >
+    </div>
+
+    <div class="dropdown text-center"style="margin-bottom:4%;">
+      <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/fluent-systems-filled/48/000000/front-desk.png"/><br></a>
+    <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Receptions Desk</b>
+    <span class=""></span></button>
+    <ul class="dropdown-menu" >
+      <li><a ng-click="receptions()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Enquiry</a></li>
+      <li><a ng-click="addEnqForm()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Enquiry</a></li>
+    </ul>
+  </div><br>
+  <div class="dropdown text-center"style="margin-bottom:4%;">
+    <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/ios-glyphs/30/000000/students.png"/><br></a>
+  <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Student Management</b>
+  <span class=""></span></button>
+  <ul class="dropdown-menu">
+    <li><a ng-click="student()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Admission</a></li>
+    <li><a ng-click="addAdmissionForm()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Admission</a></li>
+    <li><a ng-click="payFee()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Pay Fee</a></li>
+    <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Collection Sheet</a></li>
+    <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Dues List</a></li>
+  </ul>
+</div><br>
+
+<div class="dropdown text-center"style="margin-bottom:4%;">
+  <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/material-rounded/24/000000/conference-background-selected.png"/><br></a>
+<button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Staff Management</b>
+<span class=""></span></button>
+<ul class="dropdown-menu">
+  <li><a ng-click="department()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Department</a></li>
+  <li><a ng-click="staff()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Staff</a></li>
+  <li><a ng-click="addstaff()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Staff</a></li>
+</ul>
+</div><br>
+
+<div class="dropdown text-center"style="margin-bottom:4%;">
+  <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/fluent-systems-filled/48/000000/rupee.png"/><br></a>
+<button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Account</b>
+<span class=""></span></button>
+<ul class="dropdown-menu">
+  <li><a ng-click="income()" style="cursor:pointer;"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Income</a></li>
+  <li><a ng-click="expense()" style="cursor:pointer;"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Expense</a></li>
+  <li><a ng-click="mode()" style="cursor:pointer;"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Mode</a></li>
+  <li><a ng-click="bank()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Bank</a></li>
+  <li><a ng-click="bankdepo()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Bank Deposite</a></li>
+  <li><a ng-click="bankwith()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Bank Withdraw</a></li>
+
+</ul>
+</div><br>
+
+
+    <!-- <h5><img id="im" src="https://img.icons8.com/fluent-systems-filled/48/000000/front-desk.png"/>&nbsp;&nbsp;Receptions Desk</h5>
+    <ul>
+      <li><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Enquiry</li>
+      <li><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Enquiry</li>
+
+    </ul> -->
+    <div class="dropdown text-center"style="margin-bottom:4%;">
+      <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/ios-glyphs/30/000000/exam.png"/><br></a>
+    <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Examination</b>
+    <span class=""></span></button>
+    <ul class="dropdown-menu">
+      <li><a ng-click="examterm()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Exam Term</a></li>
+      <li><a ng-click="subject()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Subject</a></li>
+      <li><a ng-click="addsubject()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Subject</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Create Marksheet</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>view Marks</a></li>
+    </ul>
+  </div><br>
+
+
+
+    <div class="dropdown text-center"style="margin-bottom:4%;">
+      <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/ios-glyphs/30/000000/exam.png"/><br></a>
+    <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Time Table</b>
+    <span class=""></span></button>
+    <ul class="dropdown-menu">
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View Admission</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Add Admission</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Pay Fee</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Collection Sheet</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Dues List</a></li>
+
+    </ul>
+  </div><br>
+
+  <div class="dropdown text-center"style="margin-bottom:4%;">
+    <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im" src="https://img.icons8.com/metro/26/000000/certificate.png"/><br></a>
+  <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Transfer Certificate</b>
+  <span class=""></span></button>
+  <ul class="dropdown-menu">
+    <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Create C C</a></li>
+    <li><a ng-click="cc()"><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View C C</a></li>
+    <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Create T C</a></li>
+    <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>View T C</a></li>
+
+  </ul>
+</div><br>
+
+    <div class="dropdown text-center"style="margin-bottom:4%;">
+      <a class=" dropdown-toggle" type="" data-toggle="dropdown"><img id="im"src="https://img.icons8.com/ios-glyphs/30/000000/attendance-mark.png"/><br></a>
+    <button class=" dropdown-toggle" type="button" data-toggle="dropdown" style="border:none;background:#E5E5E5"><b>Attendance</b>
+    <span class=""></span></button>
+    <ul class="dropdown-menu">
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Student Attendance</a></li>
+      <li><a><img id="sett"  src="https://img.icons8.com/material-two-tone/24/000000/gear.png"/>Teacher Attendance</a></li>
+
+    </ul>
+  </div>
+
+
+
+
+  </div>
+  <div class="col-md-10" >
+
+  </div>
+</div>
+<!-- </div> -->
+
+
+    <div class="row">
+      <div ui-view >
+      </div>
+
+    </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+      <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- <script src="dist/angular-flash.min.js"></script> -->
+      <script src="{% static 'js/main.js' %}"></script>
+      <!-- <script src="{% static 'js/angular-flash.js' %}"></script> -->
+      <!-- <script src="{% static 'js/custom/filters.js' %}"></script> -->
+      <!-- <script src="{% static 'js/custom/directive.calendar.js' %}"></script> -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.min.js" integrity="sha512-b+yZxP3ttYrh8bcJJFFHopmaZ9+PmOdmUL01PKuLo3MDMbwM+A2RAZY6fVeA39OdUaR6UgX0JO3BFhlvv1gzmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.css" integrity="sha512-+naChGyL5WF0NADnLIbo2E7W9vW9qdz+H2YGpAQWwdvaiWXdeKuWgGMkofZO6Maly902smOa+6laE6Tm3z8LXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <hr style="border: 0px solid black; margin-top:2%;" > -->
+    <footer class="page-footer font-small " style="background:#003366;">
+
+
+      <div class="container">
+        <ul class="list-unstyled list-inline text-center" style="margin-top:2%;" >
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+    <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+    <img src="https://img.icons8.com/fluent/48/000000/google-plus.png"/>        </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+    <img src="https://img.icons8.com/fluent/48/000000/linkedin-2.png"/>        </a>
+
+        </ul>
+
+      <div class="row">
+
+          <div class="col-md-offset-4 col-md-7"style="color:white">
+            <img src="https://img.icons8.com/color/48/000000/phone-disconnected--v1.png" style="height:30px;width:30px;"/>
+            <span style="font-size="26px;">+91-7484088104,+91-8709733247</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="https://img.icons8.com/color/48/000000/important-mail.png"style="height:30px;width:30px;"/>
+            <span style="color:white">nishatndobriyal5@gmail.com</span>
+            </div>
+        </div>
+
+      <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/" style="color:white"> MDBootstrap.com</a>
+      </div>
+    </div>
+    </footer>
+
+  </body>
+</html>

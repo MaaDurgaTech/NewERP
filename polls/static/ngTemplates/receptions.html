@@ -1,0 +1,69 @@
+<style media="screen">
+
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+
+      <div class=" col-md-3">
+      <div class="form-group">
+        <input type="text" class="form-control"  ng-model="form.search"  ng-keyup="$event.keyCode == 13 && enqdata()"  placeholder="Search with ID No." style="border-radius:10px;" >
+
+      </div>
+      </div>
+      <div class="col-md-offset-5 col-md-4">
+  <button style="float:right;width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="addEnqForm()">Add Enquiry</button>
+      </div>
+      </div>
+      <!-- <div class="row"style="margin-top:2%;"> -->
+        <table class="table table-hover"  >
+    <thead style="background: #003366;color:white">
+      <tr>
+        <!-- <th>S.No</th> -->
+        <th>Id.No</th>
+        <th>Student Name</th>
+        <th>Admission Class</th>
+        <th>Father's Name</th>
+        <!-- <th>Mother Name</th> -->
+        <th>Mobile No.</th>
+        <th>Date Of Enquiry</th>
+
+        <th style="padding-left:60px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="k in enqdatas">
+        <!-- <td style="padding-left:20px;">{{$index+1}}</td> -->
+        <td style="padding-left:20px;">{{k.pk}}</td>
+        <td style="padding-left:20px;">{{k.name}}</td>
+        <td style="padding-left:20px;">{{k.addclass.c_name}}</td>
+        <td style="padding-left:20px;">{{k.father_name}}</td>
+        <!-- <td style="padding-left:20px;">{{k.mother_name}}</td> -->
+        <td style="padding-left:20px;">{{k.f_mobile}}</td>
+        <td style="padding-left:20px;">{{k.created}}</td>
+        <td><a  style="padding-left:10px;color:black;cursor:pointer;font-size:14px;"ng-click="editenq(k.pk)">Edit</a>
+          <a ng-click="deleteenq(k.pk)"  style="padding-left:10px;color:black;cursor:pointer;font-size:14px;">Delete</a>
+          <a  style="padding-left:10px;color:black;cursor:pointer;font-size:14px;">Print</a>
+          <!-- "$state.go('editenq',{'enquiryid':k.pk}) -->
+        </td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- </div> -->
+
+  <div class="row">
+            <div class="col-md-offset-5 col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block" ng-click="prev()">Prev</button>
+            </div>
+            <div class="col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block " ng-click="next()">Next</button>
+            </div>
+          </div>
+
+</div>
+</div>

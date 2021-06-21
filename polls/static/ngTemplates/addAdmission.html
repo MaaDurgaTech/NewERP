@@ -1,0 +1,318 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+  #border{
+    height:50px;
+    border-bottom:2px solid black;
+    border-radius:0px 40px 0px 0px;
+    background:#003366;
+  }
+  #drop{
+    border-radius:10px;
+    width:100%;
+    height:35px;
+    border:1px solid #C8C8C8;
+  }
+
+</style>
+<div class="container-fluid abc"style="border:2px solid black;border-radius:0px 40px 0px 0px;" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row" id="border">
+    <div class="col-md-offset-1" style="margin:1%;">
+      <img style="color:white" ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+    <span ><u style="font-size:24px;padding-left:35%;color:white"><b style="color:white"> ADMISSION FORM</u></b></span>
+    <button style="width:120px;height:40px;background:white;color:#003366;border-radius:20px;float:right;font-weight:bold;" ng-click="saveAdm()">SAVE</button>
+ <br><br><br>
+      </div>
+
+
+    </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Id No.</label>
+      <input type="text" class="form-control"  placeholder="">
+    </div>
+    </div>
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Date Of Admission</label>
+      <div class="input-group">
+        <span class="input-group-btn">
+        <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.admDate" is-open="start.DOBOpened2"/>
+        <span class="input-group-btn">
+          <button type="button"  class="btn btn-default" ng-click="start.DOBOpened2= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Admission No.</label>
+      <input type="text" class="form-control" ng-model="form.admNo" placeholder="" >
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Admission Class</label>
+      <select class="form-control"ng-model="form.addclass" ng-options="item.c_name for item in classData ">
+        <option value="" selected>Select Class</option>
+        </select>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Student name:</label>
+      <input type="text" class="form-control" ng-model="form.name" placeholder="name" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Class Fee </label>
+      <!-- <select class="form-control"ng-model="filters.c_fee" ng-options="item.c_fee for item in classData track by item.pk ">
+        <option value="" selected>Select Fee</option>
+        </select> -->
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >section </label>
+      <select class="form-control"ng-model="form.addsection" ng-options="item.section for item in sectionData ">
+        <option value="" selected>Select Section</option>
+        </select>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      DateOfBirth:
+
+
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                      <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.created" is-open="start.DOBOpened"/>
+                      <span class="input-group-btn">
+                        <button type="button"  class="btn btn-default" ng-click="start.DOBOpened= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </div>
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+      Gender:
+
+                   <br> Male:<input ng-model="form.gender" name="gender{{pk}}" type="radio" name="" ng-value="'Male'">
+                  Female:<input ng-model="form.gender" name="gender{{pk}}" type="radio" name="" ng-value="'Female'">
+
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Roll No.</label>
+      <input type="text" class="form-control" ng-model="form.rollNo" placeholder="" >
+    </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Father's Name</label>
+      <input type="text" class="form-control" ng-model="form.father_name" placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Father Occupation </label>
+      <input type="text" class="form-control" ng-model="form.f_occupation"  placeholder="" >
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Bus Root </label>
+      <select class="form-control"ng-model="form.busRoot" ng-options="item.root_name for item in busRootData track by item.pk ">
+        <option value="" selected>Select Bus Root</option>
+        </select>
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Father Qualification</label>
+      <input type="text" class="form-control"  ng-model="form.f_qualification" placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Father Mobile </label>
+      <input type="text" class="form-control"  ng-model="form.f_mobile" placeholder="" >
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Student Type </label>
+      <select class="form-control"ng-model="filters.stdType" ng-options="item.stdType for item in stdTypeData ">
+        <option value="" selected>Select Type:</option>
+        </select>
+    </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Mother Name</label>
+      <input type="text" class="form-control"  ng-model="form.mother_name" placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Mother Occupation </label>
+      <input type="text" class="form-control"  ng-model="form.m_occupation" placeholder="" >
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Hostel</label>
+      <select class="form-control"ng-model="form.addhostel" ng-options="item.h_name for item in hostelData track by item.pk ">
+        <option value="" selected>Select Hostel</option>
+        </select>
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Mother Qualification</label>
+      <input type="text" class="form-control"  ng-model="form.m_qualification"  placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Alternate Mobile </label>
+      <input type="text" class="form-control"  ng-model="form.alternateNo" placeholder="" >
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Hostel Type </label>
+      <input type="text" class="form-control"  ng-model="form.hostelTyoe" placeholder="" >
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="text" class="form-control" ng-model="form.email"  placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Cast</label>
+      <select ng-model="form.cast" id="drop">
+        <option value="" selected>Select Cast:</option>
+        <option value="GENRAL" >Genral</option>
+        <option value="OBC" >OBC</option>
+        <option value="SC/ST" >SC/ST</option>
+        <option value="Other" >Other</option>
+      </select>
+    </div>
+    </div>
+
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Religion</label>
+      <select ng-model="form.religion" id="drop">
+        <option value="" selected>Select Religion:</option>
+        <option value="HINDU" >Hindu</option>
+        <option value="MUSLIM" >Muslim</option>
+        <option value="Other" >Other</option>
+      </select>
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Local Address</label>
+      <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.l_address" ></textarea>
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Permanent Address </label>
+      <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.p_address"></textarea>
+    </div>
+    </div>
+
+    <!-- <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Remarks </label>
+      <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.p_address"></textarea>
+    </div>
+    </div> -->
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label>Student Image</label>
+      <!-- <input type="file" class=""  file-model="form.studentImage"  accept="image/*" required > -->
+      <input type="file" name="cheque" file-model="form.studentImage" >
+          </div>
+    </div>
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Aadhar Card </label>
+      <input type="file" class=""  file-model="form.studentAadhar" accept="image/*" >
+    </div>
+    </div>
+
+
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >DOB Certificate</label>
+      <input type="file" class=""  placeholder=""  file-model="form.studentDOBCer" accept="image/*">
+    </div>
+    </div>
+    <div class="col-md-offset- col-md-2">
+    <div class="form-group">
+      <label >Transfer Certificate (T.C)</label>
+      <input type="file" class=""  placeholder=""  file-model="form.studentTC" accept="image/*">
+    </div>
+    </div>
+
+  </div>
+
+  <div class="row"style="margin:2%;">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:140px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="saveAdm()">SAVE</button>
+  </div>
+  </div>
+</div>
+</div>

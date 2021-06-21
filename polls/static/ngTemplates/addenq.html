@@ -1,0 +1,191 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <img ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+      <div>
+    <div class="col-md-offset-4">
+    <h3>Create Enquiry</h3>
+    </div>
+    </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Enquiry ID</label>
+      <input type="text" class="form-control"  placeholder="">
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+      Date of Enquiry:
+
+
+      <div class="input-group">
+        <span class="input-group-btn">
+        <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.created" is-open="start.DOBOpened1"/>
+        <span class="input-group-btn">
+          <button type="button"  class="btn btn-default" ng-click="start.DOBOpened1= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Student name:</label>
+      <input type="text" class="form-control" ng-model="form.name" placeholder="name" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Admission Class </label>
+      <select class="form-control"ng-model="form.addclass" ng-options="item.c_name for item in classData ">
+        <option value="" selected>Select Class</option>
+        </select>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+      DateOfBirth:
+
+
+                   <div class="input-group">
+                     <span class="input-group-btn">
+                     <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.dob" is-open="start.DOBOpened"/>
+                     <span class="input-group-btn">
+                       <button type="button"  class="btn btn-default" ng-click="start.DOBOpened= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+                     </span>
+                   </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+      Gender:
+
+                   <br> Male:<input ng-model="form.gender" name="gender{{pk}}" type="radio" name="" ng-value="'Male'">
+                  Female:<input ng-model="form.gender" name="gender{{pk}}" type="radio" name="" ng-value="'Female'">
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Father's Name</label>
+      <input type="text" class="form-control" ng-model="form.father_name" placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Father Occupation </label>
+      <input type="text" class="form-control" ng-model="form.f_occupation"  placeholder="" >
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Father Qualification</label>
+      <input type="text" class="form-control"  ng-model="form.f_qualification" placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Mobile </label>
+      <input type="text" class="form-control"  ng-model="form.f_mobile" placeholder="" >
+    </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label >Mother Name</label>
+      <input type="text" class="form-control"  ng-model="form.mother_name" placeholder="" >
+    </div>
+    </div>
+    <!-- <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Mother Occupation </label>
+      <input type="text" class="form-control"  ng-model="form.m_occupation" placeholder="" >
+    </div>
+    </div> -->
+
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Mother Qualification</label>
+      <input type="text" class="form-control"  ng-model="form.m_qualification"  placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Alternate Mobile </label>
+      <input type="text" class="form-control"  ng-model="form.alternateNo" placeholder="" >
+    </div>
+    </div>
+
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Local Address</label>
+      <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.l_address" ></textarea>
+    </div>
+    </div>
+    <!-- <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Permanent Address </label>
+      <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.p_address"></textarea>
+    </div>
+    </div> -->
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Date Of Test</label>
+      <input type="text" class="form-control"  placeholder="" >
+    </div>
+    </div>
+    <div class="col-md-offset-1 col-md-2">
+    <div class="form-group">
+      <label >Time Of test</label>
+      <input type="text" class="form-control"  placeholder="" >
+    </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+    <div class="form-group">
+      <label>Student Image</label>
+      <input type="file"  file-model="form.studentImage" accept="image/*" required>
+    </div>
+    </div>
+</div>
+  <div class="row">
+  <div class="col-md-offset-4 col-md-2">
+  <button style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="save()">SAVE</button>
+  <!-- <p> {{msg}} </p> -->
+  <!-- <p> {{errmsg}} </p> -->
+  </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,37 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <img ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+    <span ><u style="font-size:24px;padding-left:35%;"><b> Create New Department</u></b></span><br><br><br>
+      </div>
+
+
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+    <div class="form-group">
+      <label >Department Name:</label>
+      <input type="text" class="form-control" ng-model="form.department_name"  placeholder="name" >
+    </div>
+    </div>
+    </div>
+
+
+
+  <div class="row text-center">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="savedepartment()">SAVE</button>
+  </div>
+  </div>
+</div>
+</div>

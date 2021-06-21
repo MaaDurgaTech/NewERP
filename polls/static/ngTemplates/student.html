@@ -1,0 +1,196 @@
+<style media="screen">
+
+  body{
+    background: #E5E5E5;
+  }
+  .dropbtn {
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  width:90px;
+}
+
+.dropdown {
+  /* position: relative; */
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width:180px;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #003366;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+
+
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <select class="form-control"ng-model="filters.c_name" ng-options="item.c_name for item in classData ">
+            <option value="" selected>Select Class</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <select class="form-control"ng-model="filters.section" ng-options="item.section for item in sectionData ">
+            <option value="" selected>Select Section</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control"    placeholder="Student Type" style="border-radius:10px;" >
+
+        </div>
+      </div>
+      <div class="col-md-1">
+        <img style="width:34px;height:34px;" src="https://img.icons8.com/pastel-glyph/50/000000/download.png"/>
+      </div>
+      <div class="col-md-2">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <input type="text" style="width:75%;border-radius:10px 0px 0px 10px;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.created" is-open="start.DOBOpened1"/>
+          <span class="input-group-btn">
+            <button type="button" style="border-radius:0px 10px 10px 0px;" class="btn btn-default" ng-click="start.DOBOpened1= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </div>
+        </div>
+      <div class="col-md-2">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <input type="text" style="width:75%;border-radius:10px 0px 0px 10px;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.created" is-open="start.DOBOpened"/>
+          <span class="input-group-btn">
+            <button type="button" style="border-radius:0px 10px 10px 0px;" class="btn btn-default" ng-click="start.DOBOpened= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <img style="width:34px;height:34px;" src="https://img.icons8.com/pastel-glyph/50/000000/download.png"/>
+      </div>
+      </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <input type="text" class="form-control"  ng-model="form.search" ng-keyup="$event.keyCode == 13 && admdata()" placeholder="Search Here" style="border-radius:10px;" >
+
+      </div>
+    </div>
+    <div class="col-md-offset-7 col-md-2">
+      <button style="float:right;width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="addAdmissionForm()">Add Admission</button>
+
+    </div>
+    </div>
+
+      <!-- <div class=" col-md-3"> -->
+      <!-- <div class="form-group">
+        <input type="text" class="form-control"  ng-model="form.search"  placeholder="Search with ID No." style="border-radius:10px;" >
+<button ng-click="admdata()">aaa</button>
+
+      </div> -->
+      <!-- </div> -->
+      <!-- <div class="col-md-offset-5 col-md-4"> -->
+  <!-- <button style="float:right;width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="addAdmissionForm()">Add Admission</button> -->
+      <!-- </div> -->
+
+      <div class="row"style="margin-top:2%;">
+        <table class="table table-hover" style="" >
+    <thead style="background: #003366;color:white">
+      <tr>
+        <!-- <th>S.No</th> -->
+        <th>Adm.No</th>
+        <th>Student Name</th>
+        <th>Class</th>
+        <th>Section</th>
+        <th>Father's Name</th>
+        <th>Mother Name</th>
+        <th>Mobile No.</th>
+
+
+        <th style="padding-left:60px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="k in admdatas">
+        <!-- <td style="padding-left:20px;">{{$index+1}}</td> -->
+        <td style="padding-left:20px;">{{k.admNo}}</td>
+        <td style="padding-left:20px;">{{k.name}}</td>
+        <td style="padding-left:20px;">{{k. addclass.c_name}}</td>
+        <td style="padding-left:20px;">{{k.addsection.section}}</td>
+        <td style="padding-left:20px;">{{k.father_name}}</td>
+        <td style="padding-left:20px;">{{k.mother_name}}</td>
+        <td style="padding-left:20px;">{{k.f_mobile}}</td>
+
+        <td><a ng-click=""><img style="width:34px;height:24px;padding-left:10px;color:black;cursor:pointer;" src="https://img.icons8.com/material-rounded/24/000000/edit--v1.png"/></a>
+          <a ng-click="deleteadm(k.pk)"> <img style="width:34px;height:24px;padding-left:10px;color:black;cursor:pointer;" src="https://img.icons8.com/fluent-systems-filled/48/000000/delete-forever.png"/></a>
+          <a href="enquiry/admissionPDF/?id={{k.pk}}"><img style="width:34px;height:24px;padding-left:10px;color:black;cursor:pointer;"  src="https://img.icons8.com/material/24/000000/download-from-cloud.png"/></a>
+        </td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+  <div class="row">
+            <div class="col-md-offset-5 col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block" ng-click="prev()">Prev</button>
+            </div>
+            <div class="col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block " ng-click="next()">Next</button>
+            </div>
+          </div>
+
+</div>
+</div>

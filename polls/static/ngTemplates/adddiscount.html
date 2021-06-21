@@ -1,0 +1,224 @@
+<style>
+  table tbody tr td{
+    font-weight:bold;
+    border:1px solid black;
+  }
+  table tbody tr td select{
+    width:180px;
+    height:35px;
+    border-radius:23px;
+    background:#003366;
+    color:white;
+  }
+
+  </style>
+
+<div class="container-fluid abc">
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <table class="table table-hover" style="border:2px solid #003366;margin-top:-4%;" >
+<thead style="background: #003366;color:white">
+<!-- <tr>
+  <th>S.No</th>
+  <th>Adm.No</th>
+  <th>Student Name</th>
+  <th>Class</th>
+  <th>Section</th>
+  <th>Father's Name</th>
+  <th>Mother Name</th>
+  <th>Mobile No.</th>
+
+
+  <th>Action</th>
+</tr> -->
+</thead>
+<tbody>
+<tr>
+  <td style="padding-left:20px;">Name:-{{admdata.name}}</td>
+  <td style="padding-left:20px;">Adm No.:{{admdata.admNo}}</td>
+  <td style="padding-left:20px;">Date of Birth:{{admdata.dob}}</td><br>
+  <td style="padding-left:20px;">Father's Name:-{{admdata.father_name}}</td><br>
+
+
+
+
+</tr>
+
+</tbody>
+<tbody>
+<tr>
+
+  <td style="padding-left:20px;">Class:-{{admdata.addclass.c_name}}</td>
+  <td style="padding-left:20px;">Section:-{{admdata.addsection.section}}</td>
+  <td style="padding-left:20px;">Mobile No.:-{{admdata.f_mobile}}</td>
+  <td style="padding-left:20px;">Mother's Name:-{{admdata.mother_name}}</td><br>
+
+
+
+
+</tr>
+
+</tbody>
+</table>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Class Fee Discount</h3>
+    <table class="table table-hover" style="border:2px solid #003366;margin-top:4%;" >
+    <thead style="background: #003366;color:white">
+    <tr>
+    <th>Quater</th>
+    <th>Given Amount</th>
+    <th>Discount</th>
+    <th>Paid Amount</th>
+
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><center><select ng-model="form.month" style="width:120px;height:30px;">
+        <!-- <option   value="">Select Month</option> -->
+      <option  selected value="apr" >Apr</option>
+      <option  value="may" >May</option>
+      <option value="jun" >Jun</option>
+      <option value="jul" >Jul</option>
+      <option value="aug" >Aug</option>
+      <option value="sep" >Sep</option>
+      <option value="oct" >Oct</option>
+      <option value="nov" >Nov</option>
+      <option value="dec" >Dec</option>
+      <option value="jan" >Jan</option>
+      <option value="feb" >Feb</option>
+      <option value="mar" >Mar</option>
+      </select>
+      </center></td>
+
+    <td> <input type="text" name="" id="2" value="{{admdata.addclass.c_fee /12}}"  style="width:100px;height:30px;border-radius:23px;"/></td>
+    <td> <input type="text" name="" id="2" ng-model="form.amount" style="width:100px;height:30px;border-radius:23px;"/></td>
+    <td> <input type="text" name="" id="2" value="{{admdata.addclass.c_fee /12 - form.amount}}" style="width:100px;height:30px;border-radius:23px;"/></td>
+
+    <td ><button ng-click="savediscount()" style="width:100px;height:30px;background:#003366;color:white;border-radius:20px;">Discount</button></td>
+
+
+
+    </tr>
+
+    </tbody>
+
+    </table>
+
+    </div>
+    </div>
+    <div class="row">
+
+    <div class="col-md-12">
+      <h3>Bus Fee Discount</h3>
+      <table class="table table-hover" style="border:2px solid #003366;margin-top:4%;" >
+      <thead style="background: #003366;color:white">
+      <tr>
+      <th>Quater</th>
+      <th>Given Amount</th>
+      <th>Discount</th>
+      <th>Paid Amount</th>
+
+      <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><center><select ng-model="formData.month" style="width:120px;height:30px;">
+          <!-- <option   value="">Select Month</option> -->
+        <option  selected value="apr" >Apr</option>
+        <option  value="may" >May</option>
+        <option value="jun" >Jun</option>
+        <option value="jul" >Jul</option>
+        <option value="aug" >Aug</option>
+        <option value="sep" >Sep</option>
+        <option value="oct" >Oct</option>
+        <option value="nov" >Nov</option>
+        <option value="dec" >Dec</option>
+        <option value="jan" >Jan</option>
+        <option value="feb" >Feb</option>
+        <option value="mar" >Mar</option>
+        </select>
+        </center></td>
+
+      <td> <input type="text" name="" value="{{admdata.busRoot.root_fee /12}}"  style="width:100px;height:30px;border-radius:23px;"/></td>
+      <td> <input type="text" name=""  ng-model="formData.amount" style="width:100px;height:30px;border-radius:23px;"/></td>
+      <td> <input type="text" name=""  value="{{admdata.busRoot.root_fee /12 - formData.amount}}" style="width:100px;height:30px;border-radius:23px;"/></td>
+
+      <td ><button ng-click="savebusdiscount()" style="width:100px;height:30px;background:#003366;color:white;border-radius:20px;">Discount</button></td>
+
+
+
+      </tr>
+
+      </tbody>
+
+      </table>
+
+      </div>
+  <div>
+    </div>
+
+
+
+</div>
+
+<div class="row">
+
+<div class="col-md-12">
+  <h3>Hostel Fee Discount</h3>
+  <table class="table table-hover" style="border:2px solid #003366;margin-top:4%;" >
+  <thead style="background: #003366;color:white">
+  <tr>
+  <th>Quater</th>
+  <th>Given Amount</th>
+  <th>Discount</th>
+  <th>Paid Amount</th>
+
+  <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><center><select ng-model="formDatas.month" style="width:120px;height:30px;">
+      <!-- <option   value="">Select Month</option> -->
+    <option  selected value="apr" >Apr</option>
+    <option  value="may" >May</option>
+    <option value="jun" >Jun</option>
+    <option value="jul" >Jul</option>
+    <option value="aug" >Aug</option>
+    <option value="sep" >Sep</option>
+    <option value="oct" >Oct</option>
+    <option value="nov" >Nov</option>
+    <option value="dec" >Dec</option>
+    <option value="jan" >Jan</option>
+    <option value="feb" >Feb</option>
+    <option value="mar" >Mar</option>
+    </select>
+    </center></td>
+
+  <td> <input type="text" name="" value="{{admdata.addhostel.h_fee /12}}"  style="width:100px;height:30px;border-radius:23px;"/></td>
+  <td> <input type="text" name=""  ng-model="formDatas.amount" style="width:100px;height:30px;border-radius:23px;"/></td>
+  <td> <input type="text" name=""  value="{{admdata.addhostel.h_fee /12 - formDatas.amount}}" style="width:100px;height:30px;border-radius:23px;"/></td>
+
+  <td ><button ng-click="savehosteldiscount()" style="width:100px;height:30px;background:#003366;color:white;border-radius:20px;">Discount</button></td>
+
+
+
+  </tr>
+
+  </tbody>
+
+  </table>
+
+  </div>
+<div>
+</div>
+
+
+
+</div>
+</div>

@@ -1,0 +1,167 @@
+<style media="screen">
+  .card{
+    width:100%;
+    height:200px;
+    /* background: linear-gradient(to bottom, #33ccff 0%, #003366 100%); */
+    border-radius:0px 30px 0px 30px;
+    border:1px solid #BEBEBE;
+    cursor:pointer;
+    box-shadow: 6px 4px 6px 4px;
+  }
+  #c1 :hover{
+    background: linear-gradient(to bottom, #33ccff 0%, #003366 100%);
+    color:white;
+
+
+  }
+  .container{
+    background:#003366;
+    height:150px;
+    width:100%;
+  }
+
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <!-- <div class="="row">
+    <div class="col-md-offset-1 col-md-11">
+  <button ng-click="class()"style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;"  >Class</button>
+  <button ng-click="section()" style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" >section</button>
+  <button ng-click="" style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" >Class Fee</button>
+  <button ng-click=""style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;"  >Other Fee</button>
+  <button ng-click="" style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" >Hostel Fee</button>
+  <button ng-click="" style="width:150px;height:40px;background:#003366;color:white;border-radius:20px;" >Hostel Other Fee</button>
+  <button ng-click="BusRoot()" style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" >Bus Root Fee</button>
+  <button ng-click="" style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" > Fee Discount</button>
+
+</div>
+</div> -->
+<div class="row" style="margin-top:2%;margin-bottom:2%;">
+  <div class="col-md-3" ng-click="class()" id=c1>
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/front-desk.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" >Class</h3>
+        <p class="card-text">
+          <!-- <ul ng-repeat="i in enqdata  | orderBy: name : true | limitTo: 1" style="list-style:none;">
+            <li>{{$index+1}}</li>
+            </ul> -->
+
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"ng-click="section()">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/student-male--v1.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" > Section</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="extraFee()">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/commercial-development-management.png" style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title">Extra fee Structure</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/laptop.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" >Other Fee</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-3" ng-click="addHostel()" id=c1>
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/front-desk.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" >Hostel Fee</h3>
+        <p class="card-text">
+          <ul ng-repeat="i in enqdata  | orderBy: name : true | limitTo: 1" style="list-style:none;">
+            <li>{{$index+1}}</li>
+            </ul>
+
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"ng-click="">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/student-male--v1.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" > Hostel Other Fee</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="BusRoot()">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/commercial-development-management.png" style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" ng-click="">Bus Root Fee</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3"ng-click="discount()">
+    <div class="card text-center" >
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://img.icons8.com/color/48/000000/laptop.png"style="padding-top:5%;"/>
+      <div class="card-body">
+        <h3 class="card-title" >Fee Discount</h3>
+        <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

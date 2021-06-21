@@ -1,0 +1,85 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <img ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+    <span ><u style="font-size:24px;padding-left:35%;"><b> Create New Withdraw</u></b></span><br><br><br>
+      </div>
+
+
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+    <div class="form-group">
+      <label >Bank Name:</label>
+      <select class="form-control"ng-model="form.addbank" ng-options="item.bank_name for item in BankData  ">
+        <option value="" selected>Select Bank</option>
+        </select>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+      <div class="form-group">
+        <label >Withdrawal Name:</label>
+        <input type="text" class="form-control" ng-model="form.depo_name" placeholder="name" >
+      </div>
+      </div>
+      </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+          <label>Withdraw Details:</label>
+          <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.with_details" ></textarea>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+          <label >Withdraw Date:</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+            <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.date" is-open="start.DOBOpened"/>
+            <span class="input-group-btn">
+              <button type="button"  class="btn btn-default" ng-click="start.DOBOpened= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6">
+          <div class="form-group">
+            <label >Withdraw Amount:</label>
+            <input type="text" class="form-control" ng-model="form.amount" placeholder="name" >
+          </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+              <label >Withdraw Type:</label>
+
+                            <br>Cash:<input ng-model="form.income_type" name="gender{{pk}}" type="radio" name="" ng-value="'Cash'"><br>
+                          Cheque/DD:<input ng-model="form.income_type" name="gender{{pk}}" type="radio" name="" ng-value="'Cheque/DD'"><br>
+                          <!-- Goods:<input ng-model="form.income_type" name="gender{{pk}}" type="radio" name="" ng-value="'Goods'"> -->
+
+            </div>
+            </div>
+
+  <div class="row text-center">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="savewith()">SAVE</button>
+  </div>
+  </div>
+</div>
+</div>

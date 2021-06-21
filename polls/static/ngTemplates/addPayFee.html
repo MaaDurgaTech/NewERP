@@ -1,0 +1,182 @@
+<style>
+  table tbody tr td{
+    font-weight:bold;
+    border:1px solid black;
+  }
+  table tbody tr td select{
+    width:180px;
+    height:35px;
+    border-radius:23px;
+    background:#003366;
+    color:white;
+  }
+
+  </style>
+
+<div class="container-fluid abc">
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <table class="table table-hover" style="border:2px solid #003366;margin-top:-4%;" >
+<thead style="background: #003366;color:white">
+<!-- <tr>
+  <th>S.No</th>
+  <th>Adm.No</th>
+  <th>Student Name</th>
+  <th>Class</th>
+  <th>Section</th>
+  <th>Father's Name</th>
+  <th>Mother Name</th>
+  <th>Mobile No.</th>
+
+
+  <th>Action</th>
+</tr> -->
+</thead>
+<tbody>
+<tr>
+  <td style="padding-left:20px;">Name:-{{admdata.name}}</td>
+  <td style="padding-left:20px;">Adm No.:{{admdata.admNo}}</td>
+  <td style="padding-left:20px;">Date of Birth:{{admdata.dob}}</td><br>
+  <td style="padding-left:20px;">Father's Name:-{{admdata.father_name}}</td><br>
+
+
+
+
+</tr>
+
+</tbody>
+<tbody>
+<tr>
+
+  <td style="padding-left:20px;">Class:-{{admdata.addclass.c_name}}</td>
+  <td style="padding-left:20px;">Section:-{{admdata.addsection.section}}</td>
+  <td style="padding-left:20px;">Mobile No.:-{{admdata.f_mobile}}</td>
+  <td style="padding-left:20px;">Mother's Name:-{{admdata.mother_name}}</td><br>
+
+
+
+
+</tr>
+
+</tbody>
+</table>
+<table class="table table-hover" style="border:2px solid #003366;" >
+<thead style="background: #003366;color:white">
+
+
+</thead>
+<tbody>
+<tr >
+<td style="padding-left:10px;"><img style="width:15px;height:15px;" src="https://img.icons8.com/material-outlined/24/000000/gear--v2.png"/>&nbsp;&nbsp;&nbsp;School Fee</td>
+<td><center><img style="width:15px;height:15px;" src="https://img.icons8.com/metro/24/000000/compress.png"/>&nbsp;&nbsp<select  for="myCheck" ng-click="myFunction()">
+<option   value="apr" selected>Apr</option>
+<option  value="may" >May</option>
+<option value="jun" >Jun</option>
+<option value="jul" >Jul</option>
+<option value="aug" >Aug</option>
+<option value="sep" >Sep</option>
+<option value="oct" >Oct</option>
+<option value="nov" >Nov</option>
+<option value="dec" >Dec</option>
+<option value="jan" >Jan</option>
+<option value="feb" >Feb</option>
+<option value="mar" >Mar</option>
+</select>
+<!-- <input type="text" name="" id="2" value="{{ (clsfeedatas.addclass.c_fee - (-admdata.busRoot.root_fee)) / 12 }}"  style="width:180px;height:35px;border-radius:23px;"/> -->
+<input type="text" name="" id="2" value="{{clsfeediss.t_amount}}"  style="width:180px;height:35px;border-radius:23px;"/>
+
+<!-- <input type="text" name="" value="" placeholder="Discount" style="width:140px;height:35px;border-radius:23px;"/> -->
+<!-- <input type="text" name="" value="" placeholder="Total Amount" style="width:140px;height:35px;border-radius:23px;"/> -->
+<input type="text" name="" value="" placeholder="Paid Amount" style="width:180px;height:35px;border-radius:23px;"/></center></td>
+
+
+<td style="padding-left:20px;"><button style="width:180px;height:35px;border-radius:23px;color:white;background:#003366">View Details</button></td>
+
+
+
+
+</tr>
+
+</tbody>
+<tbody>
+<tr >
+
+  <td style="padding-left:20px;"><img style="width:15px;height:15px;" src="https://img.icons8.com/material-outlined/24/000000/gear--v2.png"/>&nbsp;&nbsp;&nbsp;Hostel Fee</td>
+<td><center><img style="width:15px;height:15px;" src="https://img.icons8.com/metro/24/000000/compress.png"/>&nbsp;&nbsp;&nbsp<select for="myCheck"  ng-click="myFunction1()">
+<option value="apr" selected>Apr</option>
+<option value="may" >May</option>
+<option value="jun" >Jun</option>
+<option value="jul" >Jul</option>
+<option value="aug" >Aug</option>
+<option value="sep" >Sep</option>
+<option value="oct" >Oct</option>
+<option value="nov" >Nov</option>
+<option value="dec" >Dec</option>
+<option value="jan" >Jan</option>
+<option value="feb" >Feb</option>
+<option value="mar" >Mar</option>
+</select>
+<input type="text" name="" value="{{admdata.addhostel.h_fee / 12}} " style="width:180px;height:35px;border-radius:23px;"/>
+<input type="text" name="" value="" style="width:180px;height:35px;border-radius:23px;"/></center></td>
+
+
+<td style="padding-left:20px;"><button style="width:180px;height:35px;border-radius:23px;color:white;background:#003366">View Details</button></td>
+
+
+
+
+</tr>
+
+</tbody>
+</table>
+<div class="row"id="text1" style="margin-right:0px;margin-left:0px;margin-bottom:2%;">
+  <div class="col-md-12"style="border:2px solid black; ">
+    <h3 style="text-align:center;font-weight:bold;">School Fee</h3>
+    <table class="table table-hover" style="" >
+<thead style="background: #003366;color:white">
+  <tr>
+    <th style="padding-left:50px;">Fee Head </th>
+    <th>Given Amount</th>
+    <th >Paid Amount</th>
+
+  </tr>
+</thead>
+
+</table>
+<div class="row text-center" style="margin-top:2%;margin-bottom:2%;">
+  <div class="colo-md-12">
+<button style="width:180px;height:35px;border-radius:23px;color:white;background:#003366">Pay Fee</button>
+</div>
+</div>
+</div>
+
+
+    </div>
+    <div class="row"id="text" style="margin-right:0px;margin-left:0px;margin-bottom:2%;">
+
+    <div class="col-md-12"style="border:2px solid black;">
+      <h3 style="text-align:center;font-weight:bold;">Hostel Fee</h3>
+      <table class="table table-hover" style="" >
+  <thead style="background: #003366;color:white">
+    <tr>
+      <th style="padding-left:50px;">Fee Head</th>
+      <th>Given Amount</th>
+      <th >Paid Amount</th>
+
+    </tr>
+  </thead>
+
+  </table>
+  <div class="row text-center" style="margin-top:2%;margin-bottom:2%;">
+    <div class="colo-md-12">
+  <button style="width:180px;height:35px;border-radius:23px;color:white;background:#003366">Pay Fee</button>
+  </div>
+  </div>
+</div>
+
+      </div>
+
+
+</div>
+</div>

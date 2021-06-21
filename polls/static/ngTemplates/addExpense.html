@@ -1,0 +1,78 @@
+<style media="screen">
+  .form-control{
+    border-radius:10px;
+  }
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <img ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+    <span ><u style="font-size:24px;padding-left:35%;"><b> Create New Expense</u></b></span><br><br><br>
+      </div>
+
+
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+    <div class="form-group">
+      <label >Expense Mode:</label>
+      <select class="form-control"ng-model="form.expenseMode" ng-options="item.mode_name for item in expenseModeData track by item.pk ">
+        <option value="" selected>Select Mode</option>
+        </select>
+
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+          <label>Expense Details</label>
+          <textarea class="form-control" rows=4 cols=50 placeholder=""  ng-model="form.expense_details" ></textarea>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+          <label >Expense Date:</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+            <input type="text" style="width:20%;" class="form-control" show-weeks="false" uib-datepicker-popup="yyyy-MM-dd" placeholder="DateOfBirth" ng-model="form.date" is-open="start.DOBOpened"/>
+            <span class="input-group-btn">
+              <button type="button"  class="btn btn-default" ng-click="start.DOBOpened= true;"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6">
+          <div class="form-group">
+            <label >Expense Amount:</label>
+            <input type="text" class="form-control" ng-model="form.amount" placeholder="name" >
+          </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+              <label >Expense Type:</label>
+
+                            <br>Cash:<input ng-model="form.expense_type" name="gender{{pk}}" type="radio" name="" ng-value="'Cash'"><br>
+                          Cheque/DD:<input ng-model="form.expense_type" name="gender{{pk}}" type="radio" name="" ng-value="'Cheque/DD'"><br>
+                          <!-- Goods:<input ng-model="form.income_type" name="gender{{pk}}" type="radio" name="" ng-value="'Goods'"> -->
+
+            </div>
+            </div>
+
+  <div class="row text-center">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:120px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="saveExpense()">SAVE</button>
+  </div>
+  </div>
+</div>
+</div>

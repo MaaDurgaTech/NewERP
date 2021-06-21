@@ -1,0 +1,66 @@
+<style media="screen">
+
+</style>
+<div class="container-fluid abc" >
+  <div class="col-md-2">
+    </div>
+  <div class="col-md-10">
+  <div class="row">
+    <div class=" col-md-1">
+    <img style="color:white" ng-click="back()" src="https://img.icons8.com/material-sharp/24/000000/left.png"/>
+
+      </div>
+
+      <div class=" col-md-3">
+      <div class="form-group">
+        <input type="text" class="form-control"  ng-model="form.search" ng-enter="enqdata()" placeholder="Search with ID No." style="border-radius:10px;" >
+
+
+      </div>
+      </div>
+      <div class="col-md-offset-4 col-md-4">
+  <button style="float:right;width:150px;height:40px;background:#003366;color:white;border-radius:20px;" ng-click="addsubject()">Add Subject</button>
+      </div>
+      </div>
+      <div class="row"style="margin-top:2%;">
+        <table class="table table-hover"  >
+    <thead style="background: #003366;color:white">
+      <tr>
+        <th>S.no</th>
+        <th>Class</th>
+        <!-- <th>Exam Term</th> -->
+        <th>Subject</th>
+
+
+        <th style="padding-left:60px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="k in subjectdatas">
+        <td style="padding-left:20px;">{{$index+1}}</td>
+        <td style="padding-left:20px;">{{k.addclass.c_name}}</td>
+        <!-- <td style="padding-left:20px;">{{k.acc_no}}</td> -->
+        <td style="padding-left:20px;">{{k.subject1}},{{k.subject2}},{{k.subject3}},{{k.subject4}},{{k.subject5}},{{k.subject6}},{{k.subject7}},{{k.subject8}}</td>
+
+
+
+        <td><a  style="padding-left:10px;color:black;cursor:pointer;font-size:14px;"ng-click="editenq(k.pk)">Edit</a>
+          <a ng-click="deletesubject(k.pk)"  style="padding-left:10px;color:black;cursor:pointer;font-size:14px;">Delete</a>
+        </td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+  <div class="row">
+            <div class="col-md-offset-5 col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block" ng-click="prev()">Prev</button>
+            </div>
+            <div class="col-md-1">
+              <button type="button" class="btn btn-sm btn-primary btn-block " ng-click="next()">Next</button>
+            </div>
+          </div>
+</div>
+</div>
